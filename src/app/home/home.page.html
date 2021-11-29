@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+     <ion-title  class="ion-text-center">BIENVENIDO A   STVK.INC </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profile">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+  
+  <ion-button expand="block" fill="clear" routerLink="/signup">
+    Crear Cuenta
+  </ion-button>
+  <ion-button expand="block" fill="clear" routerLink="/camp">
+    Crear informacion
+  </ion-button>
+
+</div>
+
+<div class="ion-padding">
+
+  <ion-infinite-scroll>
+
+   <ion-title class="ion-text-center">Informacion</ion-title>
+
+   <ion-list>
+    
+    <ion-item-sliding class="align-items-center" *ngFor="let record of ingreso; let i = index">
+
+     <ion-item>
+       
+      <ion-input cols="20" readonly="true" position="fidex"> 
+         nombre informacion: {{record.nombre}}<br>
+         comuna: {{record.comuna}}<br> 
+         correo: {{record.correo}} <br>
+         telefono: {{record.telefono}} <br>
+         detalle: {{record.detalle}} <br>
+        
+        </ion-input>
+         
+     </ion-item>
+
+     <ion-item-options side="end" (click)="cambiarcomuna(record.id)" >
+     <ion-item-option color="danger"> cambiar </ion-item-option>
+
+     </ion-item-options>
+
+    </ion-item-sliding>
+
+
+
+   </ion-list>
+     
+     
+    
+</ion-infinite-scroll>
+</div>

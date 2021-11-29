@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">informacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<form #formulario="ngForm">
+
+  <ion-item>
+    <ion-label>Nombre Vendedor :</ion-label>
+    <ion-input type="text"   name="nombre"  [(ngModel)]="insertar.nombre" required ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Correo Electronico :</ion-label>
+    <ion-input type="text"   name="correo"  [(ngModel)]="insertar.correo" required ></ion-input> 
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefono :</ion-label>
+    <ion-input type="text"   name="telefono"  [(ngModel)]="insertar.telefono" required ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Comuna :</ion-label>
+    <ion-input type="text"   name="comuna"  [(ngModel)]="insertar.comuna" required ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Detalles del Par :</ion-label>
+    <ion-input type="text"   name="detalle"  [(ngModel)]="insertar.detalle" required ></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" color="success"[disabled]="formulario.invalid" (click)="guardar(insertar.nombre,insertar.correo,insertar.telefono,insertar.comuna,insertar.detalle)"  >Guardar</ion-button>
+</form>
+</ion-content>
